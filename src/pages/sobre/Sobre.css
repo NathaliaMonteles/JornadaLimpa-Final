@@ -54,13 +54,14 @@
 
 .member-info {
     margin-top: 2rem;
-    background-color: white;
+    height: 10rem;
+    background-color: rgb(172, 197, 171);
     padding: 1rem 2rem;
     border-radius: 0.5rem;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     width: 80%;
     text-align: center;
-    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+    transition: opacity 1s ease-in-out, transform 1s ease-in-out;
     opacity: 0;
     transform: translateY(10px);
     visibility: hidden;

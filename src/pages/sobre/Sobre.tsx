@@ -100,6 +100,7 @@ function Sobre() {
           )}
         </div>
       </section>
+
     </>
   );
 }
