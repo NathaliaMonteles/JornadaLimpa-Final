@@ -1,13 +1,15 @@
-import './App.css'
+import React from 'react';
+import './App.css';
+import Home from './pages/home/Home';
+import Navbar from './components/navbar/Navbar';
 
 function App() {
- 
-
   return (
     <>
-    <h1 className='text-sky-300 text-6xl'>ola</h1>
-    </>
-  )
-}
+    <Navbar/>
+    <Home/>
 
-export default App
+    </>
+);
+}
+export default App;
