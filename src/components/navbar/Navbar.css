@@ -1,0 +1,17 @@
+.nav-item {
+   
+    color: #ffffff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 16px;
+    text-decoration: none;
+    transition: background-color 0.3s ease, color 0.3s ease; /* Transições suaves para background e cor */
+  }
+  
+  .nav-item:hover {
+    background-color: #252525;
+    color: #ffffff;
+    text-decoration: none;
+  }
