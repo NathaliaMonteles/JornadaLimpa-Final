@@ -52,7 +52,7 @@ function Sobre() {
   return (
     <>
       <div className="justificando">
-        <div className="h-screen text-green-900">
+        <div className="h-screen ">
           <div className="pl-14 text-4xl mb-4">
             <h2>Sobre nós</h2>
           </div>

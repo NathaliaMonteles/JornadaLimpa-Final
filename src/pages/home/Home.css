@@ -1,0 +1,9 @@
+.imagem{
+    border-radius: 50%;
+}
+
+.imagens{
+    width: 20rem;
+    display: flex;
+   
+}

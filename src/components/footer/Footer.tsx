@@ -1,7 +1,6 @@
 import React from 'react'
 import { GithubLogo, LinkedinLogo, Mailbox, LinktreeLogo } from '@phosphor-icons/react'
 
-
 function Footer() {
     const githubLink = 'https://github.com/Jornada-Limpa';
     const linkedinLink = 'https://www.linkedin.com/in/Jornada-limpa-170435313';

@@ -16,7 +16,7 @@ function Navbar() {
         </button>
         <div className='flex gap-4'>
           <button className='nav-item' onClick={() => handleButtonClick('https://www.linkedin.com/in/Jornada-limpa-170435313')}>Postagens</button>
-          <button className='nav-item' onClick={() => handleButtonClick('hhttps://linktr.ee/jornadalimpa')}>Temas</button>
+          <button className='nav-item' onClick={() => handleButtonClick('http://localhost:5173/contato')}>Contato</button>
           <button className='nav-item' onClick={() => handleButtonClick('https://github.com/Jornada-Limpa')}>Cadastrar tema</button>
           <button className='nav-item' onClick={() => handleButtonClick('http://localhost:5173/perfil')}>Perfil</button>
           <button className='nav-item' onClick={() => handleButtonClick('http://localhost:5173/sair')}>Sair</button>
