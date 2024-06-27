@@ -1,13 +1,17 @@
-import './App.css'
+import React from 'react';
+import ContactForm from './pages/contato/Contato.tsx';
+import './App.css';
 
-function App() {
- 
-
+const App: React.FC = () => {
   return (
-    <>
-    <h1 className='text-sky-300 text-6xl'>ola</h1>
-    </>
-  )
-}
+    <div className="App">
+      <header className="App-header">
+      </header>
+      <ContactForm />
+      <footer className='App-footer'>
+      </footer>
+    </div>
+  );
+};
 
-export default App
+export default App;
