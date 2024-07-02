@@ -1,9 +1,48 @@
-.imagem{
-    border-radius: 50%;
+.img{
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 56% 100%);
 }
 
-.imagens{
-    width: 20rem;
+.shop:hover{
+    background-color: rgb(235, 235, 235);
+    transition: transform 0.3s ease;
+    transform: scale(1.1);
+}
+.setas{
+    height: auto;
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+.setas:hover{
+    background-color: rgba(255, 255, 255, 1);
+}
+
+
+.carrossel{
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    min-height: 50vh;
     display: flex;
-   
+    align-items: center;
+    justify-content: center;
+}
+
+.inner{
+    display: flex;
+}
+
+.item{
+    min-height: 200px;
+    min-width: 400px;
+    padding: 14px;
+}
+
+.item img{
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+.carrousel{
+    cursor: grab;
+    overflow: hidden;
 }
