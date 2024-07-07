@@ -7,24 +7,25 @@
     transition: transform 0.3s ease;
     transform: scale(1.1);
 }
-.setas{
+.botaoSeta{
     height: auto;
     background-color: rgba(255, 255, 255, 0.5);
 }
 
-.setas:hover{
+.botaoSeta:hover{
     background-color: rgba(255, 255, 255, 1);
 }
 
 
 .carrossel{
     width: 100%;
-    max-width: 800px;
+    max-width: 900px;
     margin: 0 auto;
-    min-height: 50vh;
+    min-height: 35vh;
     display: flex;
     align-items: center;
     justify-content: center;
+    padding-bottom: 70px;
 }
 
 .inner{
@@ -33,7 +34,7 @@
 
 .item{
     min-height: 200px;
-    min-width: 400px;
+    min-width: 200px;
     padding: 14px;
 }
 
