@@ -1,18 +1,16 @@
 .nav-item {
    
     color: #ffffff;
-    padding: 10px 20px;
+    padding: 0 10px;
     border: none;
     border-radius: 20px;
-    cursor: pointer;
-    font-size: 16px;
     text-decoration: none;
-    transition: background-color 0.3s ease, color 0.3s ease; /* Transições suaves para background e cor */
+
   }
   
   .nav-item:hover {
     background-color: #252525;
     color: #ffffff;
     text-decoration: none;
-    background-image: linear-gradient(to right top, #02f94d, #00dbb6, #00b4ff, #0083ff, #1225eb);
+    background: rgba(0, 0, 0, 0.445);
   }
