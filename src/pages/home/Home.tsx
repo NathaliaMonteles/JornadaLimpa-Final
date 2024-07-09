@@ -46,7 +46,7 @@ function Home() {
                 <div className="flex flex-col gap-4 items-center justify-center py-4 bg-indigo-950 w-full">
                     <h2 className='text-5xl font-bold'>welcome</h2>
                     <p className='text-xl indent-0.5'>4 por 99R$</p>
-    
+
                     <div className="flex justify-around gap-4">
                 
                         <button className='shop rounded bg-white text-indigo-800 py-2 px-4 flex gap-2 justify-center'>
@@ -139,7 +139,7 @@ function Home() {
                     
                 </div>
                 
-                <div className='bg-indigo-950 text-white'>
+                <div className='min-h-96 bg-indigo-950 text-white'>
                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem assumenda doloremque suscipit dolorem neque excepturi rem est ut quo quaerat, repudiandae numquam nobis non voluptate dolorum nostrum optio aspernatur omnis.</p>
 
                 </div>

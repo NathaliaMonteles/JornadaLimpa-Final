@@ -40,11 +40,11 @@ function Footer() {
           <div className="container flex flex-col items-center py-4">
             <h2 className='text-xl font-bold mb-4'>Meios de Pagamento</h2>
             <div className="flex justify-center gap-4">
-              <img src="/src/assets/bradesco@2x.png" alt="" className='img' width={48} height={30}/>
-              <img src="/src/assets/elo@2x.png" alt="" className='img' width={48} height={30}/>
-              <img src="/src/assets/visa@2x.png" alt="" className='img' width={48} height={30}/>
-              <img src="/src/assets/mastercard@2x.png" alt="" className='img' width={48} height={30}/>
-              <img src="/src/assets/pix@2x.png" alt="" className='img' width={48} height={30}/>
+              <img src="/src/assets/bradesco@2x.png" alt="" className='img1' width={48} height={30}/>
+              <img src="/src/assets/elo@2x.png" alt="" className='img1' width={48} height={30}/>
+              <img src="/src/assets/visa@2x.png" alt="" className='img1' width={48} height={30}/>
+              <img src="/src/assets/mastercard@2x.png" alt="" className='img1' width={48} height={30}/>
+              <img src="/src/assets/pix@2x.png" alt="" className='img1' width={48} height={30}/>
             </div>
           </div>
 
