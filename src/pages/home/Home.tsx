@@ -1,7 +1,7 @@
-
+import React from 'react';
 import { useState, useEffect, useRef } from 'react';
 import './Home.css';
-import { ShoppingCart} from '@phosphor-icons/react'
+import { ShoppingCart,ArrowFatLeft,ArrowFatRight,CreditCard,Lock,Package} from '@phosphor-icons/react'
 import Img1 from "../../assets/camisa1.png"
 import Img2 from "../../assets/rename2.png"
 import ImgMain from "../../assets/imagemmain.jpg"
@@ -9,7 +9,7 @@ import Img3 from "../../assets/xicara1.png"
 import Img4 from "../../assets/xicara2.png"
 import { motion } from 'framer-motion';
 
-const images = [Img1, Img2, Img3, Img4]
+const images = [Img1, Img2, Img3, Img4, Img1, Img2, Img3, Img4]
 
 function Home() {
     const carrousel = useRef();
@@ -31,11 +31,11 @@ function Home() {
     };
 
     const nextSlide = () => {
-        showSlide(currentIndex + images.length);
+        showSlide(currentIndex + (images.length / 2));
     };
 
     const prevSlide = () => {
-        showSlide(currentIndex - images.length);
+        showSlide(currentIndex - (images.length / 2));
     };
     
     return (
@@ -44,7 +44,7 @@ function Home() {
             <div className='principal grid grid-cols-2 text-white bg-blue-900 h-96 '>
 
                 <div className="flex flex-col gap-4 items-center justify-center py-4 bg-indigo-950 w-full">
-                    <h2 className='text-5xl font-bold'>wellcome</h2>
+                    <h2 className='text-5xl font-bold'>welcome</h2>
                     <p className='text-xl indent-0.5'>4 por 99R$</p>
     
                     <div className="flex justify-around gap-4">
@@ -63,16 +63,57 @@ function Home() {
 
             </div>
 
+
+
+
+            <div className=' flex gap-6 justify-center'>
+
+                <div className=' gap-1 inline-flex text-white m-5'>
+                    <div className='p-1 border-2 border-white border-dashed rounded-full'>
+                        <CreditCard size={32} />
+                    </div>
+                    <div>
+                        <h3 className='font-bold mb-0'>Facilidade</h3>
+                        <p>parcele sem juros</p>
+                    </div>
+                </div>
+
+                <div className=' gap-1 inline-flex text-white m-5'>
+                    <div className='p-1 border-2 border-white border-dashed rounded-full '>
+                        <Lock size={32} />
+                    </div>
+                    <div>
+                        <h3 className='font-bold mb-0 '>Segurança</h3>
+                        <p>seus dados seguros</p>
+                    </div>
+                </div>
+
+                <div className=' gap-1 inline-flex text-white m-5'>
+                    <div className='p-1 border-2 border-white border-dashed rounded-full'>
+                        <Package size={32} />
+                    </div>
+                    <div>
+                        <h3 className='font-bold mb-0'>Agilidade</h3>
+                        <p>entrega rápida</p>
+                    </div>
+                </div>
+
+            </div>
+
+
+
+            
+
             <div className="">
                 <div className='categoria w-full items-center flex flex-col '>
 
-                    <div>
-                        <h2 className='text-4xl font-bold text-blue-800 text-white py-11'>categorias</h2>
+                    <div className='border-b-2 border-indigo-300'>
+                        <h2 className='text-4xl font-bold text-white mt-11 mb-2'>categorias</h2>
                     </div>
     
                     <div className='carrossel'>
                             <div className="">
-                                <button className="bg-white text-black p-2" onClick={prevSlide}>&#10094;</button>
+                                <button className="botaoSeta rounded p-2 " onClick={prevSlide}><ArrowFatLeft size={32} /></button>
                             </div>
 
                         <motion.div ref={carrousel} className="carrousel">
@@ -90,7 +131,7 @@ function Home() {
 
                         
                             <div className="">
-                                <button className="bg-white text-black p-2" onClick={nextSlide}>&#10095;</button>
+                                <button className="botaoSeta rounded p-2" onClick={nextSlide}><ArrowFatRight size={32} /></button>
                             </div>
                         
                     </div>

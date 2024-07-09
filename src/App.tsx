@@ -1,14 +1,11 @@
-import './App.css'
-
+import React from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Navbar from './components/navbar/Navbar';
-import Home from './pages/home/Home'
 import Footer from './components/footer/Footer';
+import Contato from './pages/contato/Contato';
+import Home from './pages/home/Home';
 import Sobre from './pages/sobre/Sobre';
-import Contato from './pages/contato/Contato'
-
-
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import Login from './pages/login/Login'
+import Login from './pages/login/Login';
 import Cadastro from './pages/cadastro/Cadastro';
 import { AuthProvider } from './context/AuthContext';
 import Trocas from './pages/trocas/Trocas';
@@ -16,18 +13,15 @@ import Seguranca from './pages/seguranca/Seguranca';
 import Entrega from './pages/entrega/Entrega';
 import Compra from './pages/compra/Compra';
 
-
 function App() {
- 
-
   return (
     <>
-    <AuthProvider>
-   <BrowserRouter>
+      <AuthProvider>
+        <BrowserRouter>
           <Navbar />
           <div className='min-h-[80vh]'>
             <Routes>
-              <Route path="/Contato" element={<Contato />} />
+              <Route path="/contato" element={<Contato />} />
               <Route path="/home" element={<Home />} />
               <Route path="/sobre" element={<Sobre />} />
               <Route path="/login" element={<Login />} />
@@ -38,11 +32,11 @@ function App() {
               <Route path="/compra" element={<Compra />} />
             </Routes>
           </div>
-         <Footer />
+          <Footer />
         </BrowserRouter>
-        </AuthProvider>
+      </AuthProvider>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
