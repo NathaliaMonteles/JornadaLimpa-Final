@@ -1,7 +1,7 @@
 import React from 'react';
 import { useState, useEffect, useRef } from 'react';
 import './Home.css';
-import { ShoppingCart,ArrowFatLeft,ArrowFatRight,CreditCard,Lock,Package} from '@phosphor-icons/react'
+import { ShoppingCart,ArrowFatLeft,ArrowFatRight,CreditCard,Lock,Package, CigaretteSlash} from '@phosphor-icons/react'
 import Img1 from "../../assets/camisa1.png"
 import Img2 from "../../assets/rename2.png"
 import ImgMain from "../../assets/imagemmain.jpg"
@@ -44,7 +44,7 @@ function Home() {
             <div className='principal grid grid-cols-2 text-white bg-blue-900 h-96 '>
 
                 <div className="flex flex-col gap-4 items-center justify-center py-4 bg-indigo-950 w-full">
-                    <h2 className='text-5xl font-bold'>welcome</h2>
+                    <h2 className='text-5xl font-bold flex'>Narcoticos Anonimos<CigaretteSlash size={32} /></h2>
                     <p className='text-xl indent-0.5'>4 por 99R$</p>
 
                     <div className="flex justify-around gap-4">

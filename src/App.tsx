@@ -12,6 +12,11 @@ import Trocas from './pages/trocas/Trocas';
 import Seguranca from './pages/seguranca/Seguranca';
 import Entrega from './pages/entrega/Entrega';
 import Compra from './pages/compra/Compra';
+import FormularioCategoria from './components/categoria/formularioCategoria/FormularioCategoria';
+import ListaCategoria from './components/categoria/listaCategoria/ListaCategoria';
+import DeletarCategoria from './components/categoria/deletarTema/DeletarCategoria';
+
+
 
 function App() {
   return (
@@ -30,6 +35,9 @@ function App() {
               <Route path="/entrega" element={<Entrega />} />
               <Route path="/seguranca" element={<Seguranca />} />
               <Route path="/compra" element={<Compra />} />
+              <Route path="/cadastroCategoria" element={<FormularioCategoria />} />
+              <Route path="/categorias" element={<ListaCategoria />} />
+              <Route path="/deletarCategoria/:id" element={<DeletarCategoria />} />
             </Routes>
           </div>
           <Footer />
