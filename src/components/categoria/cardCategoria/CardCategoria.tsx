@@ -1,30 +1,58 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import Categoria from '../../../model/Categoria';
-import {DotsThree } from '@phosphor-icons/react';
-
+import { DotsThreeOutline, Pencil, Trash } from '@phosphor-icons/react';
+import './CardCategoria.css';
 interface CardCategoriaProps {
-  categoria: Categoria
+  categoria: Categoria;
 }
 
-function CardCategorias({categoria}: CardCategoriaProps) {
+function CardCategorias({ categoria }: CardCategoriaProps) {
+  const [mostrarOpcoes, setMostrarOpcoes] = useState(false);
+
+  const toggleOpcoes = () => {
+    setMostrarOpcoes(!mostrarOpcoes);
+  };
+
   return (
-    <div className='border flex flex-col rounded-2xl overflow-hidden justify-between'>
-        <div className='container columns-2 bg-indigo-800'>
-        <header className='py-2 px-6  text-white font-bold text-2xl'>Categoria</header>
-        <span className='text-white flex justify-end items-center px-8 '><DotsThree size={32} /></span>
-        </div>
-      <p className='p-8 text-3xl bg-slate-200 h-full'>{categoria.tipo}</p>
-      <div className="flex">
-        <Link to={`/editarCategoria/${categoria.id}`} className='w-full text-slate-100 bg-indigo-400 hover:bg-indigo-800 flex items-center justify-center py-2'>
-          <button>Editar</button>
-        </Link>
-        <Link to={`/deletarCategoria/${categoria.id}`} className='text-slate-100 bg-red-400 hover:bg-red-700 w-full flex items-center justify-center'>
-          <button>Deletar</button>
-        </Link>
+    <div className='border flex flex-col rounded-2xl overflow-hidden justify-between relative'>
+      <div className='container columns-2 bg-indigo-800'>
+        <header className='py-2 px-6 text-white font-bold text-2xl'>Categoria</header>
+        <button
+          className='absolute top-2 right-2 text-white cursor-pointer focus:outline-none z-10'
+          onClick={toggleOpcoes}
+        >
+          <DotsThreeOutline size={32} />
+        </button>
       </div>
+      <div className='relative'>
+        
+        {mostrarOpcoes && (
+          <div className='dropdown-list-c'>
+            <ul>
+              <li>
+                <Link
+                  to={`/editarCategoria/${categoria.id}`}
+                  className='flex items-center text-gray-800 hover:bg-gray-200 px-4 py-2'
+                >
+                  <Pencil size={16} /> Editar
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to={`/deletarCategoria/${categoria.id}`}
+                  className='flex items-center text-red-800 hover:bg-red-200 px-4 py-2'
+                >
+                  <Trash size={16} /> Deletar
+                </Link>
+              </li>
+            </ul>
+          </div>
+        )}
+      </div>
+      <p className='p-8 text-3xl bg-slate-200 h-full'>{categoria.tipo}</p>
     </div>
-  )
+  );
 }
 
 export default CardCategorias;
