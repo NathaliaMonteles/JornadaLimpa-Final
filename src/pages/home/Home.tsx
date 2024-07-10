@@ -44,7 +44,7 @@ function Home() {
             <div className='principal grid grid-cols-2 text-white bg-blue-900 h-96 '>
 
                 <div className="flex flex-col gap-4 items-center justify-center py-4 bg-indigo-950 w-full">
-                    <h2 className='text-5xl font-bold flex'>Narcoticos Anonimos<CigaretteSlash size={32} /></h2>
+                    <h2 className='text-5xl font-bold flex'>Home<CigaretteSlash size={32} /></h2>
                     <p className='text-xl indent-0.5'>4 por 99R$</p>
 
                     <div className="flex justify-around gap-4">
