@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { Mailbox, LinktreeLogo, LinkedinLogo, GithubLogo } from '@phosphor-icons/react'
 import './Contato.css';
 
 
@@ -23,20 +22,21 @@ const ContactForm: React.FC = () => {
 
   return (
     <>
-        <div className='card-img'>
-            <h1 className='titulo font-serif font-bold gradient'>Contato</h1>
-            <p className='texto font-serif font-bold'>Nos mande uma mensagem pelo formulário abaixo que te responderemos o mais rápido possível.</p>
+    <div className='flex items-center justify-start p-80 h-screen'>
+        <div className='card p-10 rounded-lg shadow-2xl shadow-amber-200 w-full max-w-md'>
+            <h1 className='text-4xl font-bold font-mono mb-4 text-amber-400'>Contato</h1>
+            <p className='text-sm font-sans'>Para entrar em contato conosco, por favor utilize o formulário abaixo. Responderemos em até dois dias úteis.</p>
                 <div className="contact-form-container">
                 <form className="contact-form" onSubmit={handleSubmit}>
-                    <label>
+                    <label className="block">
                     Nome
                     <input type="text" name="name" value={formData.name} onChange={handleChange} />
                     </label>
-                    <label>
+                    <label className="block">
                     Email
                     <input type="email" name="email" value={formData.email} onChange={handleChange} />
                     </label>
-                    <label>
+                    <label >
                     Telefone
                     <input type="tel" name="telefone" value={formData.telefone} onChange={handleChange} />
                     </label>
@@ -44,21 +44,11 @@ const ContactForm: React.FC = () => {
                     Assunto
                     <textarea name="message" value={formData.message} onChange={handleChange}></textarea>
                     </label>
-                    <button type="submit">Enviar</button>
+                    <button type="submit" className="w-full py-2 px-4 bg-amber-400 text-white rounded-md hover:bg-amber-800">Enviar</button>
                 </form>
-                <div className="contact-links">
-                    <button className="contact-button email shadow-inner">
-                    <Mailbox size={32} />Email</button>
-                    <button className="contact-button whatsapp shadow-inner">
-                    <LinktreeLogo size={32} />Linktree</button>
-                    <button className="contact-button linkedin shadow-inner">
-                    <LinkedinLogo size={32} />LinkedIn</button>
-                    <button className="contact-button github shadow-inner">
-                    <GithubLogo size={32} />GitHub</button>
-                </div>
             </div>
         </div>
-
+      </div>
     </>
 
   );
