@@ -9,6 +9,7 @@ import Img3 from "../../assets/xicara1.png"
 import Img4 from "../../assets/xicara2.png"
 import { motion } from 'framer-motion';
 import ModalProduto from '../../components/produto/modalProduto/ModalProduto';
+import ListaProdutos from '../../components/produto/listaProduto/ListaProdutos';
 
 const images = [Img1, Img2, Img3, Img4, Img1, Img2, Img3, Img4]
 
@@ -142,8 +143,8 @@ function Home() {
                     
                 </div>
                 
-                <div className='min-h-96 bg-indigo-950 text-white'>
-                   <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem assumenda doloremque suscipit dolorem neque excepturi rem est ut quo quaerat, repudiandae numquam nobis non voluptate dolorum nostrum optio aspernatur omnis.</p>
+                <div className=''>
+                    <ListaProdutos />
 
                 </div>
             </div>

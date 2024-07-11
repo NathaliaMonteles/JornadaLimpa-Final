@@ -30,7 +30,7 @@ function Navbar() {
           </Link>
 
           <div className='relative flex gap-5'>
-            
+
             <Link to='/categorias' className="flex items-center">
               Categoria
             </Link>
@@ -41,7 +41,6 @@ function Navbar() {
               className='nav-item relative'
               onMouseEnter={() => setShowSubMenu(true)}
               onMouseLeave={() => setShowSubMenu(false)}>
-
 
               {!usuario.token && (
                 <>
@@ -68,7 +67,10 @@ function Navbar() {
               )}
               {usuario.token && (
                 <>
-                  <span><UserCircleCheck size={40} weight="fill" /> <b>Olá, {usuario.nome}</b> </span>
+                  <div className='flex items-center gap-2'>
+                    <img src={usuario.foto} alt="" className='h-[42px] w-[42px] bg-white rounded-full'/>
+                    <b>Olá, {usuario.nome}</b>
+                  </div>
                   {showSubMenu && (
                     <div className="dropdown-list">
                       <ul>
@@ -92,8 +94,6 @@ function Navbar() {
 
             </div>
           </div>
-
-
 
         </div>
       </div>
