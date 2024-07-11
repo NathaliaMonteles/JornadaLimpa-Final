@@ -148,8 +148,8 @@ function FormularioProduto() {
               value={produto.produto}
               onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
               type="text"
-              placeholder="Nome"
-              name="nome"
+              placeholder="Produto"
+              name="produto"
               required
               className="border-2 border-slate-700 rounded p-2"
             />

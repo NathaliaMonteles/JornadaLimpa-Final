@@ -29,10 +29,13 @@ function Navbar() {
             <span>Jornada Limpa</span>
           </Link>
 
-          <div className='relative flex'>
+          <div className='relative flex gap-5'>
             
             <Link to='/categorias' className="flex items-center">
               Categoria
+            </Link>
+            <Link to='/produtos' className="flex items-center">
+              produto
             </Link>
             <div
               className='nav-item relative'
