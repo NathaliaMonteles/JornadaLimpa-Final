@@ -1,0 +1,49 @@
+
+                    {!usuario.token && (
+                      <>
+                      <span><UserCirclePlus size={40} />bem vindo </span>
+              {showSubMenu && (
+                <div className="dropdown-list">
+                  <ul>
+
+                        <li>
+                          <Link to='/cadastro' className="flex items-center">
+                            <BsPencilSquare size={16} className="mr-1" /> Cadastro
+                          </Link>
+                        </li>
+                        <li>
+                          <Link to='/login' className="flex items-center">
+                            <BsPencilSquare size={16} className="mr-1" /> Login
+                          </Link>
+                        </li>
+
+                    </ul>
+                </div>
+              )}
+                      </>
+                    )}
+                    {usuario.token && (
+                      <>
+
+                      <span><UserCirclePlus size={40} />bem vindo </span>
+                      {showSubMenu && (
+                        <div className="dropdown-list">
+                          <ul>
+
+                        <li>
+                          <Link to='/sobre' className="flex items-center">
+                            <IoInformationCircleOutline size={16} className="mr-1" /> Sobre
+                          </Link>
+                        </li>
+                        <li>
+                          <span onClick={logout} className="flex items-center cursor-pointer">
+                            <MdExitToApp size={16} className="mr-1" /> Sair
+                          </span>
+                        </li>
+
+                    </ul>
+                </div>
+              )}
+                      </>
+                    )}
+                  
