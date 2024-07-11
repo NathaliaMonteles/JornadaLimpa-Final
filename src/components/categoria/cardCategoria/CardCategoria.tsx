@@ -15,6 +15,7 @@ function CardCategorias({categoria}: CardCategoriaProps) {
         <span className='text-white flex justify-end items-center px-8 '><DotsThree size={32} /></span>
         </div>
       <p className='p-8 text-3xl bg-slate-200 h-full'>{categoria.tipo}</p>
+
       <div className="flex">
         <Link to={`/editarCategoria/${categoria.id}`} className='w-full text-slate-100 bg-indigo-400 hover:bg-indigo-800 flex items-center justify-center py-2'>
           <button>Editar</button>
@@ -23,6 +24,7 @@ function CardCategorias({categoria}: CardCategoriaProps) {
           <button>Deletar</button>
         </Link>
       </div>
+      
     </div>
   )
 }

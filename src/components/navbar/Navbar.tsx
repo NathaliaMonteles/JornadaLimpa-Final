@@ -30,9 +30,15 @@ function Navbar() {
           
 
           <div className='relative flex'>
+            
             <Link to='/categorias' className="flex items-center">
               Categoria
             </Link>
+
+            <Link to='/produtos' className="flex items-center ml-4">
+              Produtos
+            </Link>
+
             <div 
               className='nav-item relative'
               onMouseEnter={() => setShowSubMenu(true)}

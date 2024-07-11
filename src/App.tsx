@@ -1,4 +1,3 @@
-import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Navbar from './components/navbar/Navbar';
 import Footer from './components/footer/Footer';
@@ -16,7 +15,7 @@ import FormularioCategoria from './components/categoria/formularioCategoria/Form
 import ListaCategoria from './components/categoria/listaCategoria/ListaCategoria';
 import DeletarCategoria from './components/categoria/deletarTema/DeletarCategoria';
 import EditarCategoria from './components/categoria/formularioCategoria/FormularioCategoria';
-
+import ListaProdutos from './components/produto/listaProduto/ListaProdutos';
 
 
 function App() {
@@ -40,6 +39,7 @@ function App() {
               <Route path="/categorias" element={<ListaCategoria />} />
               <Route path="/editarCategoria/:id" element={<EditarCategoria />} />
               <Route path="/deletarCategoria/:id" element={<DeletarCategoria />} />
+              <Route path="/produtos" element={<ListaProdutos />} />
             </Routes>
           </div>
           <Footer />

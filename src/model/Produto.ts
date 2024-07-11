@@ -1,11 +1,12 @@
-import Tema from './Categoria';
-import Usuario from './Usuario';
+import Categoria from './Categoria';
 
 export default interface Produto {
   id: number;
-  titulo: string;
-  texto: string;
-  data: string;
-  tema: Tema | null;
-  email: Usuario | null;
+  produto: string;
+  preco: number;
+  tamanho: string;
+  material: string;
+  cor: string;
+  foto: string;
+  categoria: Categoria | null;
 }
