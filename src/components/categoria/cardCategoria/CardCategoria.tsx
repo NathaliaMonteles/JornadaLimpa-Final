@@ -26,7 +26,7 @@ function CardCategorias({ categoria }: CardCategoriaProps) {
         </button>
       </div>
       <div className='relative'>
-        
+        {/* vou trabalhar com essa branch */}
         {mostrarOpcoes && (
           <div className='dropdown-list-c'>
             <ul>
