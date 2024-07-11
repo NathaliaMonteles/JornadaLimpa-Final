@@ -8,6 +8,7 @@ import ImgMain from "../../assets/imagemmain.jpg"
 import Img3 from "../../assets/xicara1.png"
 import Img4 from "../../assets/xicara2.png"
 import { motion } from 'framer-motion';
+import ModalProduto from '../../components/produto/modalProduto/ModalProduto';
 
 const images = [Img1, Img2, Img3, Img4, Img1, Img2, Img3, Img4]
 
@@ -46,7 +47,6 @@ function Home() {
                 <div className="flex flex-col gap-4 items-center justify-center py-4 bg-indigo-950 w-full">
                     <h2 className='text-5xl font-bold flex'>Home<CigaretteSlash size={32} /></h2>
                     <p className='text-xl indent-0.5'>4 por 99R$</p>
-
                     <div className="flex justify-around gap-4">
                 
                         <button className='shop rounded bg-white text-indigo-800 py-2 px-4 flex gap-2 justify-center'>
@@ -54,6 +54,9 @@ function Home() {
                         <h1 className='text-xl '>Shopping</h1>
                         </button>
 
+                    </div>
+                    <div className='mt-3'>
+                        <ModalProduto />
                     </div>
                 </div>
     
