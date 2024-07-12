@@ -4,7 +4,7 @@ import './Home.css';
 import { ShoppingCart,ArrowFatLeft,ArrowFatRight,CreditCard,Lock,Package, CigaretteSlash} from '@phosphor-icons/react'
 import Img1 from "../../assets/camisa1.png"
 import Img2 from "../../assets/rename2.png"
-import ImgMain from "../../assets/testedotestedoteste (1).png"
+import ImgMain from "../../assets/final3203902938290289.png"
 import Img3 from "../../assets/xicara1.png"
 import Img4 from "../../assets/xicara2.png"
 import { motion } from 'framer-motion';
