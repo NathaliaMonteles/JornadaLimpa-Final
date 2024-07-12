@@ -21,8 +21,8 @@ function Navbar() {
   }
 
   return (
-    <div className='w-full bg-indigo-900 text-white'>
-      <div className="container mx-auto py-4">
+    <div className='navbar w-full text-white'>
+      <div className="container mx-auto">
         <div className="flex items-center justify-between">
           <Link to='/' className='text-2xl font-bold uppercase flex items-center'>
             <HouseLine size={32} className="mr-1" />
@@ -35,7 +35,7 @@ function Navbar() {
               Categoria
             </Link>
             <Link to='/produtos' className="flex items-center">
-              produto
+              Produto
             </Link>
             <div
               className='nav-item relative'
