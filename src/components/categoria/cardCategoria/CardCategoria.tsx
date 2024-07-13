@@ -17,7 +17,7 @@ function CardCategorias({ categoria }: CardCategoriaProps) {
 
   return (
     <div className='border flex flex-col rounded-2xl overflow-hidden justify-between relative'>
-      <div className='container columns-2 bg-indigo-800'>
+      <div className='container columns-2  bg-cyan-600'>
         <header className='py-2 px-6 text-white font-bold text-2xl'>Categoria {categoria.id}</header>
         <button
           className='absolute top-2 right-2 text-white cursor-pointer focus:outline-none z-10'
@@ -50,7 +50,7 @@ function CardCategorias({ categoria }: CardCategoriaProps) {
           </div>
         )}
       </div>
-      <p className='p-8 text-3xl bg-slate-200 h-full'>{categoria.tipo}</p>
+      <p className='p-8 text-3xl bg-white h-full'>{categoria.tipo}</p>
     </div>
   );
 }

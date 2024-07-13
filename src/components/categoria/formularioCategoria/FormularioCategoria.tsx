@@ -3,7 +3,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import { atualizar, buscar, cadastrar } from "../../../service/Service";
 import { AuthContext } from "../../../context/AuthContext";
 import Categoria from "../../../model/Categoria";
-
+import {toastAlerta} from '../../../util/toastAlerta'
 function FormularioCategoria() {
     const [categoria, setCategoria] = useState<Categoria>({} as Categoria);
   
@@ -48,15 +48,15 @@ function FormularioCategoria() {
             }
           })
   
-          alert('Tema atualizado com sucesso')
+          toastAlerta('Categoria atualizada com sucesso','sucesso')
           retornar()
   
         } catch (error: any) {
           if (error.toString().includes('403')) {
-            alert('O token expirou, favor logar novamente')
+            toastAlerta('O token expirou, favor logar novamente', 'info')
             handleLogout()
           } else {
-            alert('Erro ao atualizar o Tema')
+            toastAlerta('Erro ao atualizar a Categoria', 'erro')
           }
   
         }
@@ -69,14 +69,14 @@ function FormularioCategoria() {
             }
           })
   
-          alert('Tema cadastrado com sucesso')
+          toastAlerta('Categoria cadastrada com sucesso','sucesso')
   
         } catch (error: any) {
           if (error.toString().includes('403')) {
-            alert('O token expirou, favor logar novamente')
+            toastAlerta('O token expirou, favor logar novamente', 'info')
             handleLogout()
           } else {
-            alert('Erro ao cadastrado o Tema')
+             toastAlerta('Erro ao cadastrar a categoria','erro')
           }
         }
       }
@@ -90,7 +90,7 @@ function FormularioCategoria() {
   
     useEffect(() => {
       if (token === '') {
-        alert('Você precisa estar logado');
+        toastAlerta('Você precisa estar logado','sucesso');
         navigate('/login');
       }
     }, [token]);
@@ -98,7 +98,7 @@ function FormularioCategoria() {
     return (
       <div className="container flex flex-col items-center justify-center mx-auto">
         <h1 className="text-4xl text-center my-8">
-          {id === undefined ? 'Cadastre uma Categoria' : 'Editar tema'}
+          {id === undefined ? 'Cadastre uma Categoria' : 'Editar categoria'}
         </h1>
   
         <form className="w-1/2 flex flex-col gap-4" onSubmit={gerarNovoTema}>
@@ -114,7 +114,7 @@ function FormularioCategoria() {
             />
           </div>
           <button
-            className="rounded text-slate-100 bg-indigo-400 hover:bg-indigo-800 w-1/2 py-2 mx-auto block"
+            className="rounded text-slate-100 bg-cyan-600 hover:bg-cyan-800 w-1/2 py-2 mx-auto block font-title"
             type="submit"
           >
             {id === undefined ? 'Cadastrar' : 'Editar'}

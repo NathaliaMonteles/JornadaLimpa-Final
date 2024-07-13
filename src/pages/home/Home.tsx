@@ -1,7 +1,7 @@
 import React from 'react';
 import { useState, useEffect, useRef } from 'react';
 import './Home.css';
-import { ShoppingCart,ArrowFatLeft,ArrowFatRight,CreditCard,Lock,Package, CigaretteSlash} from '@phosphor-icons/react'
+import { ShoppingCart,ArrowFatLeft,ArrowFatRight,CreditCard,Lock,Package} from '@phosphor-icons/react'
 import Img1 from "../../assets/camisa1.png"
 import Img2 from "../../assets/rename2.png"
 import ImgMain from "../../assets/final3203902938290289.png"
@@ -10,6 +10,7 @@ import Img4 from "../../assets/xicara2.png"
 import { motion } from 'framer-motion';
 import ModalProduto from '../../components/produto/modalProduto/ModalProduto';
 import ListaProdutos from '../../components/produto/listaProduto/ListaProdutos';
+import ListaProdutosHome from '../../components/produto/listaProdutoHome/ListaProdutosHome';
 
 const images = [Img1, Img2, Img3, Img4, Img1, Img2, Img3, Img4]
 
@@ -44,26 +45,26 @@ function Home() {
         <>
         <div className="body">
             <div className='principal h-96 relative'>
-                <div className="banner detalhes absolute inset-0 z-0">
+                <div className="banner absolute inset-0 z-0">
                 <img src={ImgMain} alt="" className="w-full h-full object-cover"/>
                 </div>
-                <div className="detalhes home flex flex-col gap-4 py-8 text-white">
-                    <h2 className='text-5xl font-bold flex'>Home<CigaretteSlash size={32} /></h2>
-                    <p className='text-xl indent-0.5'>4 por 99R$</p>
+                <div className="detalhes home flex flex-col gap-2 py-12 text-white">
+                    <h2 className='text-5xl font-bold flex'>Promoção</h2>
+                    <p className='text-xl indent-0.5'>2 por R$100,00</p>
                         <div className="gap-4">
                             <button className='shop rounded bg-white py-2 px-4 flex gap-2'>
                             <ShoppingCart size={32} />
                             <h1 className='text-xl'>Shopping</h1>
                             </button>
                         </div>
-                    <div className='mt-3'>
+                    <div className='mt-2'>
                         <ModalProduto />
                     </div>
                 </div>
             </div>
             
 
-            <div className='qualidades flex gap-6 justify-center'>
+            <div className='qualidades flex gap-4 justify-center'>
 
                 <div className='texto gap-1 inline-flex m-5'>
                     <div className='p-1 border-2 border-amber-950 border-dashed rounded-full'>
@@ -104,7 +105,7 @@ function Home() {
             <div className="titulo">
                 <div className='categoria w-full items-center flex flex-col '>
                     <div className='border-b-2 border-yellow-950'>
-                        <h2 className='text-4xl font-bold mt-11 mb-2'>Categorias</h2>
+                        <h2 className='text-4xl font-bold mt-5 mb-1'>Categorias</h2>
                     </div>
     
                     <div className='carrossel'>
@@ -123,23 +124,14 @@ function Home() {
                                 ))}
 
                             </motion.div>
-                        </motion.div>
-
-                        
+                        </motion.div>   
                             <div className="">
                                 <button className="botaoSeta rounded p-2" onClick={nextSlide}><ArrowFatRight size={32} /></button>
                             </div>
-                        
-                    </div>
-                            
-                    
-                </div>
-                
-                <div className=''>
-                    <ListaProdutos />
+                    </div>   
+                    <ListaProdutosHome />
                 </div>
             </div>
-
         </div>
       
       </>
