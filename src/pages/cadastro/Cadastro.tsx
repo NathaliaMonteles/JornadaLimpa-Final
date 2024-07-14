@@ -106,7 +106,7 @@ function Cadastro() {
   };
 
   return (
-    <div className="flex justify-center items-center h-screen">
+    <div className="flex justify-center items-center">
       <form style={estiloFormulario} onSubmit={cadastrarNovoUsuario}>
         <h2 style={estiloTitulo}>Cadastrar</h2>
         <div style={{ width: '100%' }}>
@@ -174,15 +174,10 @@ function Cadastro() {
             <button
               className=" text-white bg-red-500 hover:bg-red-700 "
               onClick={back}
-              style={estiloBotao}
-            >
+              style={estiloBotao}>
               Cancelar
             </button>
-            <button
-              className="text-white bg-cyan-600 hover:bg-cyan-800"
-              type="submit"
-              style={estiloBotao}
-            >
+            <button className='text-white bg-cyan-600 hover:bg-cyan-800' type='submit' style={estiloBotao}>
               Cadastrar
             </button>
           </div>

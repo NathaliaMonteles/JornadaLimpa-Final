@@ -1,29 +1,27 @@
-import React, { useContext, useEffect, useState } from 'react';
-
+import React, { useContext, useEffect, useState, ChangeEvent } from 'react';
+import Slider from "react-slick";
 import { useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../../context/AuthContext';
 import Produto from '../../../model/Produto';
 import { buscar } from '../../../service/Service'
-import CardProduto from '../cardProduto/CardProduto';
+import CardProdutoHome from '../cardProdutoHome/CardProdutoHome';
 import { Dna, MagnifyingGlass } from '@phosphor-icons/react';
-
+import "slick-carousel/slick/slick.css"; 
+import "slick-carousel/slick/slick-theme.css"; 
+import './ListaProdutosHome.css';
 
 function ListaProdutosHome() {
   const [produto, setProduto] = useState<Produto[]>([]);
-  //FILTRO
   const [filtro, setFiltro] = useState<Produto[]>([]);
-
   let navigate = useNavigate();
-
   const { usuario, handleLogout } = useContext(AuthContext);
   const token = usuario.token;
 
   useEffect(() => {
     if (token === '') {
-      // era pra ter um alerta aqui, alguem coloque pfv!!!
       navigate('/');
     }
-  }, [token]);
+  }, [token, navigate]);
 
   async function buscarProdutos() {
     try {
@@ -39,12 +37,11 @@ function ListaProdutosHome() {
       }
     }
   }
-//deus pfv me ajuda
+
   useEffect(() => {
     buscarProdutos();
   }, [produto.length]);
-
-  //FILTRO
+  
   const filtredList = produto.filter((elements) => {
     if (filtro.toLocaleString() === '') {
       return elements
@@ -53,21 +50,43 @@ function ListaProdutosHome() {
     }
   })
 
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+          infinite: true,
+          dots: true
+        }
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1
+        }
+      }
+    ]
+  };
+
   return (
     <>
-      {/* FILTRO AQUI */}
-
-      <label className="flex">
+      <label className="flex justify-center mb-4 ">
         <input onChange={(event: ChangeEvent<HTMLInputElement>) => {
           setFiltro(event.target.value)
         }} 
-          className=' border rounded-md p-1 pr-40 border-black my-2 bg-gray-100 '
+          className='border rounded-md p-2 pr-40 border-black bg-gray-100'
           type='text'
           placeholder="Buscar"
-          name=''
-          id='' 
-          />
-          <MagnifyingGlass size={32} className='ml-2 mt-2 text-cyan-800 cursor-pointer'/>
+        />
+        <MagnifyingGlass size={32} className='ml-2 mt-2 text-black cursor-pointer'/>
       </label>
 
       {produto.length === 0 && (
@@ -80,12 +99,14 @@ function ListaProdutosHome() {
           wrapperClass="dna-wrapper mx-auto"
         />
       )}
-      <div className='container mx-auto my-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4'>
-        {filtredList.map((produto) => (
-          <>
-            <CardProduto key={produto.id} produto={produto} />
-          </>
-        ))}
+      <div className='container mx-auto my-4'>
+        <Slider {...settings}>
+          {filtredList.map((produto) => (
+            <div key={produto.id} className='px-2'>
+              <CardProdutoHome produto={produto} />
+            </div>
+          ))}
+        </Slider>
       </div>
     </>
   );

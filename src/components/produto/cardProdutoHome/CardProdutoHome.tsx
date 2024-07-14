@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 import Produto from '../../../model/Produto'
-import { DotsThreeOutline, Trash, Pencil,ShoppingCartSimple } from '@phosphor-icons/react';
+import { Trash, Pencil,ShoppingCartSimple } from '@phosphor-icons/react';
 import { useState } from 'react';
 
 interface CardProdutoProps {
@@ -18,17 +18,7 @@ function CardProdutoHome({ produto }: CardProdutoProps) {
 
 	return (
 
-		<div className='border-slate-900 border bg-orange-200 flex flex-col rounded overflow-hidden justify-between '>
-			<div className='flex justify-end'>
-				<button
-					className=' cursor-pointer focus:outline-none z-10'
-					onClick={toggleOpcoes}
-				>
-					<DotsThreeOutline size={32} />
-				</button>
-
-
-			</div>
+		<div className='border-slate-900 flex flex-col rounded overflow-hidden justify-between min-h-[550px]'>
 
 			<div className='relative'>
 				{mostrarOpcoes && (
@@ -56,14 +46,14 @@ function CardProdutoHome({ produto }: CardProdutoProps) {
 			</div>
 
 			<div>
-				<div className='p-4 bg-orange-200'>
+				<div className='p-4 '>
 					<img src={produto.foto} alt="foto do produto" className='max-h-[800px]' />
 					<h4 className='text-lg font-semibold uppercase mb-3'>{produto.categoria?.tipo} {produto.produto}, {produto.cor}</h4>
 					<p>TAMANHO - {produto.tamanho}</p>
 					<p>POR APENAS R${produto.preco}</p>
 				</div>
 			</div>
-			<div className='flex justify-end'>
+			<div className='flex justify-center'>
 				<button className='bg-green-700 m-4 rounded text-white flex items-center p-2 gap-2'><ShoppingCartSimple size={32} /> COMPRAR</button>
 			</div>
 			
