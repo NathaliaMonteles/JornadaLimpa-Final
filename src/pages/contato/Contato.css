@@ -8,9 +8,7 @@
  body {
   background-color: var(--color-background);
  }
-.card {
-  background-color: rgba(166, 179, 182, 0.288) ;
-}
+
 
 .contact-form-container {
     display: flex;

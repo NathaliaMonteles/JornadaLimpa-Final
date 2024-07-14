@@ -27,16 +27,7 @@ function Footer() {
             <a href="/Contato">Contato</a>
             </p>
             <p className='text-sm'>
-            <a href="/Entrega">Entregas</a>
-            </p>
-            <p className='text-sm'>
-            <a href="/Compra">Como comprar</a>
-            </p>
-            <p className='text-sm'>
-            <a href="/Trocas">Trocas e Devoluções</a>
-            </p>
-            <p className='text-sm'>
-            <a href="/Seguranca">Segurança de dados</a>
+            <a href="/Entrega">Perguntas Frequentes</a>
             </p>
           </div>
 
@@ -67,7 +58,7 @@ function Footer() {
                 <br/>
             </div>
             
-          <div className="justify-center container flex flex-col items-center pt-8">
+          <div className="justify-center container flex flex-col items-center pt-4">
           <p className='font-title text-xs'>Um projeto realizado na Generation | Copyright©️: Jornada Limpa</p>
           </div>
 

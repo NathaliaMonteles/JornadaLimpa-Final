@@ -17,7 +17,7 @@
   
   .justificando {
     height: 100%;
-    padding-top: 20vh;
+    padding-top: 80px;
     background: var(--color-primary);
     padding-left: 15vh;
     color: white;
@@ -25,7 +25,6 @@
   
   .segunda {
     position: relative;
-    min-height: 100vh;
     background: var(--color-background);
     padding: 3.5rem;
     display: flex;
@@ -86,7 +85,6 @@
   
   .terceira {
     background-color: var(--color-background);
-    padding: 4rem 2rem;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -132,10 +130,10 @@
     color: #3E94AB;
     margin: 0.5rem 0;
   }
+
   .quarta{
     background: var(--color-background);
     padding: 5rem;
-    height: 100vh;
     display: flex;
     
   }

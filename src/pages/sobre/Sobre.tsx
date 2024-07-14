@@ -3,7 +3,6 @@ import { Lightning, Users, Leaf } from "@phosphor-icons/react";
 import "./Sobre.css";
 import urso from '../../assets/Sage_green_bear_desktop_wallpaper_3_-removebg-preview.png';
 
-
 interface TeamMember {
   name: string;
   imgSrc: string;
@@ -25,10 +24,10 @@ const teamMembers: TeamMember[] = [
     role: "Especialista Backend"
   },
   {
-    name: "Gabriella",
+    name: "Gabriella Martins",
     imgSrc: "https://avatars.githubusercontent.com/u/56032518?v=4",
-    description: "Gabriella é uma engenheira de software com paixão por design e UX.",
-    role: "Engenheira de Software"
+    description: "Gabriella é uma desenvolvedora front-end, com grande interesse em se tornar full-stack.",
+    role: "Desenvolvedora Front-end"
   },
   {
     name: "James",
@@ -60,7 +59,7 @@ function Sobre() {
   return (
     <>
       <div className="justificando">
-        <div className="pl-14 text-4xl mb-4">
+        <div className="pl-14 text-4xl mb-3">
           <h2>Sobre nós</h2>
         </div>
         <div className="pl-14 pr-14 flex">
@@ -80,7 +79,7 @@ function Sobre() {
       </div>
 
       <section className="segunda">
-        <div className="w-1/2 mb-4 text-center">
+        <div className="mb-5 text-center">
           <h2 className="text-white text-4xl ">Quem somos?</h2>
         </div>
 
@@ -100,21 +99,18 @@ function Sobre() {
 
       <section className="terceira">
         <div className="container text-center">
-          <h2 className="text-4xl mb-8">Nossos Valores</h2>
+          <h2 className="text-4xl">Nossos Valores</h2>
           <div className="valores">
             <div className="valor-item">
-              <Lightning size={48} color="#3E94AB" />
-              <h3>Inovação</h3>
+              <h3><Lightning size={45} color="#3E94AB" />Inovação</h3>
               <p>Estamos sempre buscando novas soluções e abordagens criativas para os desafios que enfrentamos.</p>
             </div>
             <div className="valor-item">
-              <Users size={48} color="#3E94AB" />
-              <h3>Comunidade</h3>
+              <h3><Users size={45} color="#3E94AB" />Comunidade</h3>
               <p>Trabalhamos em colaboração com a comunidade para construir um futuro melhor para todos.</p>
             </div>
             <div className="valor-item">
-              <Leaf size={48} color="#3E94AB" />
-              <h3>Sustentabilidade</h3>
+              <h3><Leaf size={45} color="#3E94AB" />Sustentabilidade</h3>
               <p>Nosso compromisso é com práticas que respeitem e preservem o meio ambiente.</p>
             </div>
           </div>

@@ -1,8 +1,7 @@
 import React, { ChangeEvent, useContext, useEffect, useState } from 'react';
-import './Login.css';
 
 import { Link, useNavigate } from 'react-router-dom';
-import {toastAlerta} from '../../util/toastAlerta'
+
 import { AuthContext } from '../../context/AuthContext';
 import UsuarioLogin from '../../model/UsuarioLogin';
 import { RotatingLines } from 'react-loader-spinner';
@@ -10,85 +9,86 @@ import { RotatingLines } from 'react-loader-spinner';
 function Login() {
   let navigate = useNavigate();
 
-  const [usuarioLogin, setUsuarioLogin] = useState<UsuarioLogin>(
-    {} as UsuarioLogin
-  );
-
-  const { usuario, handleLogin } = useContext(AuthContext);
-
-  const {isLoading} = useContext(AuthContext) 
+  const [usuarioLogin, setUsuarioLogin] = useState<UsuarioLogin>({} as UsuarioLogin);
+  const { usuario, handleLogin, isLoading } = useContext(AuthContext);
 
   useEffect(() => {
     if (usuario.token !== "") {
-        navigate('/')
+      navigate('/');
     }
-}, [usuario])
+  }, [usuario, navigate]);
 
-function atualizarEstado(e: ChangeEvent<HTMLInputElement>) {
-  setUsuarioLogin({
+  function atualizarEstado(e: ChangeEvent<HTMLInputElement>) {
+    setUsuarioLogin({
       ...usuarioLogin,
       [e.target.name]: e.target.value
-  })
-}
+    });
+  }
 
-function login(e: ChangeEvent<HTMLFormElement>) {
-  e.preventDefault()
-console.log(usuarioLogin)
-  handleLogin(usuarioLogin)
-}
+  function login(e: ChangeEvent<HTMLFormElement>) {
+    e.preventDefault();
+    handleLogin(usuarioLogin);
+  }
+
+  function irParaCadastro() {
+    navigate('/cadastro');
+  }
 
   return (
-    <>
-      <div className="grid grid-cols-1 lg:grid-cols-2 h-screen place-items-center ">
-        <form className="flex justify-center items-center flex-col w-1/2 gap-4" onSubmit={login}>
-          <h2 className="font-title font-bold text-slate-900 text-5xl ">ENTRAR</h2>
-          <div className="flex flex-col w-full">
-            <label htmlFor="usuario">Usuário</label>
+    <div className="flex items-center justify-center w-full h-screen">
+      <div className="max-w-md w-full p-8 bg-white shadow-lg rounded-lg">
+        <form className="flex flex-col gap-6" onSubmit={login}>
+          <h2 className="text-4xl text-gray-800 font-bold mb-4 text-center">Entrar</h2>
+          <div className="w-full">
+            <label htmlFor="usuario" className="block text-sm font-medium text-gray-700">Usuário</label>
             <input
               type="text"
               id="usuario"
               name="email"
-              placeholder="Usuario"
-              className="border-2 border-slate-700 rounded p-2"
-              value={usuarioLogin.email} 
+              placeholder="Usuário"
+              className="border-2 border-gray-300 rounded p-2 w-full"
+              value={usuarioLogin.email}
               onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
             />
           </div>
-          <div className="flex flex-col w-full">
-            <label htmlFor="senha">Senha</label>
+          <div className="w-full">
+            <label htmlFor="senha" className="block text-sm font-medium text-gray-700">Senha</label>
             <input
               type="password"
               id="senha"
               name="senha"
               placeholder="Senha"
-              className="border-2 border-slate-700 rounded p-2"
-              value={usuarioLogin.senha} 
+              className="border-2 border-gray-300 rounded p-2 w-full"
+              value={usuarioLogin.senha}
               onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
             />
           </div>
-          <button  type='submit' className="rounded bg-indigo-400 hover:bg-indigo-900 text-white font-title text-xs w-1/2 py-2 flex justify-center">
-           {isLoading ? <RotatingLines
-            strokeColor="white"
-            strokeWidth="5"
-            animationDuration="0.75"
-            width="24"
-            visible={true}
-          /> :
-            <span>Entrar</span>}
-          </button>
-
-          <hr className="border-slate-800 w-full" />
-
-          <p>
+          <div className="relative">
+            <button type='submit' className="rounded bg-cyan-600 hover:bg-cyan-800 text-white py-2 w-full">
+              <span className={isLoading ? 'opacity-0' : 'opacity-100'}>Entrar</span>
+              {isLoading && (
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <RotatingLines
+                    strokeColor="white"
+                    strokeWidth="5"
+                    animationDuration="0.75"
+                    width="24"
+                    visible={true}
+                  />
+                </div>
+              )}
+            </button>
+          </div>
+          <hr className="border-gray-300 w-full my-2" />
+          <p className="text-center">
             Ainda não tem uma conta?{' '}
-            <Link to="/cadastro" className="text-indigo-800 font-bold text-sm hover:underline">
-              CADASTRE-SE
+            <Link to="/cadastro" className="text-cyan-600 hover:underline" onClick={irParaCadastro}>
+              Cadastre-se
             </Link>
           </p>
         </form>
-        <div className="fundoLogin hidden lg:block"></div>
       </div>
-    </>
+    </div>
   );
 }
 

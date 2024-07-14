@@ -7,10 +7,7 @@ import Sobre from './pages/sobre/Sobre';
 import Login from './pages/login/Login';
 import Cadastro from './pages/cadastro/Cadastro';
 import { AuthProvider } from './context/AuthContext';
-import Trocas from './pages/trocas/Trocas';
-import Seguranca from './pages/seguranca/Seguranca';
 import Entrega from './pages/entrega/Entrega';
-import Compra from './pages/compra/Compra';
 import FormularioCategoria from './components/categoria/formularioCategoria/FormularioCategoria';
 import ListaCategoria from './components/categoria/listaCategoria/ListaCategoria';
 import DeletarCategoria from './components/categoria/deletarTema/DeletarCategoria';
@@ -33,10 +30,7 @@ function App() {
               <Route path="/sobre" element={<Sobre />} />
               <Route path="/login" element={<Login />} />
               <Route path="/cadastro" element={<Cadastro />} />
-              <Route path="/trocas" element={<Trocas />} />
               <Route path="/entrega" element={<Entrega />} />
-              <Route path="/seguranca" element={<Seguranca />} />
-              <Route path="/compra" element={<Compra />} />
               <Route path="/cadastroCategoria" element={<FormularioCategoria />} />
               <Route path="/categorias" element={<ListaCategoria />} />
               <Route path="/editarCategoria/:id" element={<EditarCategoria />} />
