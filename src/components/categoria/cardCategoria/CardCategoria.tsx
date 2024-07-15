@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import Categoria from '../../../model/Categoria';
 import { DotsThreeOutline, Pencil, Trash } from '@phosphor-icons/react';
+import './CardCategoria.css'
 
 interface CardCategoriaProps {
   categoria: Categoria;
