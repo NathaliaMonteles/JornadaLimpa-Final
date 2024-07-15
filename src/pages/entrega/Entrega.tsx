@@ -33,7 +33,7 @@ function Entrega() {
           </div>
           <div className="flex pl-1 pr-40">
             <div className="text-justify">
-            <br />
+            <br/>
               <p>
               1 - Confira o produto ao recebê-lo. Qualquer problema ou defeito do item, entre em contato IMEDIATAMENTE. As peças só serão aceitas se devolvidas INTACTAS, sem uso e embaladas como foram enviadas.
               </p>
