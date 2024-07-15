@@ -114,15 +114,6 @@ function Navbar() {
                             <MdExitToApp size={16} className="mr-1" /> Sair
                           </span>
                         </li>
-                        <li>
-                          <Link to="/sobre" className="flex items-center">
-                            <IoInformationCircleOutline
-                              size={16}
-                              className="mr-1"
-                            />
-                            Sobre
-                          </Link>
-                        </li>
                       </ul>
                     </div>
                   )}
