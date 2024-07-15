@@ -1,6 +1,8 @@
 import Produto from '../../../model/Produto'
 import { ShoppingCartSimple } from '@phosphor-icons/react';
 import "./CardProdutoHome.css";
+import { useContext } from 'react';
+import { CarrinhoContext } from '../../../context/CarrinhoContext';
 
 interface CardProdutoProps {
 	produto: Produto
@@ -8,9 +10,11 @@ interface CardProdutoProps {
 
 function CardProdutoHome({ produto }: CardProdutoProps) {
 
+	const { adicionarItem } = useContext(CarrinhoContext);
+
 	return (
 
-		<div className='card-produto'>
+		<div className='card-produto m-5'>
 			
 				<div className='produto-info'>
 					<img src={produto.foto} alt="foto do produto"/>
@@ -21,7 +25,12 @@ function CardProdutoHome({ produto }: CardProdutoProps) {
 				</div>
 			
 			<div className='flex'>
-				<button className='bg-green-700 m-4 rounded text-white flex items-center p-2 gap-2'><ShoppingCartSimple size={32} /> COMPRAR</button>
+			<button
+              className='btn-comprar bg-green-700 m-4 rounded text-white flex items-center'
+              onClick={() => adicionarItem(produto)}
+            >
+              <ShoppingCartSimple size={32} /> COMPRAR
+            </button>
 			</div>
 			
 		</div>

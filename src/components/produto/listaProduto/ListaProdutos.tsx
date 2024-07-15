@@ -6,6 +6,7 @@ import { buscar } from '../../../service/Service';
 import CardProduto from '../cardProduto/CardProduto';
 import { DNA } from 'react-loader-spinner';
 import { toastAlerta } from '../../../util/toastAlerta';
+import ModalProduto from '../modalProduto/ModalProduto';
 
 function ListaProdutos() {
   const [produtos, setProdutos] = useState<Produto[]>([]);
@@ -24,7 +25,7 @@ function ListaProdutos() {
   useEffect(() => {
     if (token === '') {
       toastAlerta('Você precisa estar logado', 'erro');
-      navigate('/');
+      navigate('/login');
     } else {
       buscarProdutos();
     }
@@ -50,6 +51,9 @@ function ListaProdutos() {
   }, [produtos]);
 
   const filtrarProdutos = () => {
+    
+    
+
     let produtosFiltradosTemp = produtos.filter((produto) => {
       if (filtroNome && !produto.produto.toLowerCase().includes(filtroNome.toLowerCase())) {
         return false;
@@ -136,6 +140,7 @@ function ListaProdutos() {
             <CardProduto key={produto.id} produto={produto} />
           ))}
         </div>
+        
       </div>
     </>
   );

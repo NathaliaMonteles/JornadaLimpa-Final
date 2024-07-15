@@ -5,10 +5,11 @@ import { AuthContext } from '../../../context/AuthContext';
 import Produto from '../../../model/Produto';
 import { buscar } from '../../../service/Service'
 import CardProdutoHome from '../cardProdutoHome/CardProdutoHome';
-import { Dna, MagnifyingGlass } from '@phosphor-icons/react';
+import { MagnifyingGlass } from '@phosphor-icons/react';
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css"; 
 import './ListaProdutosHome.css';
+import { DNA } from 'react-loader-spinner';
 
 function ListaProdutosHome() {
   const [produto, setProduto] = useState<Produto[]>([]);
@@ -54,7 +55,7 @@ function ListaProdutosHome() {
     dots: true,
     infinite: true,
     speed: 500,
-    slidesToShow: 3,
+    slidesToShow: 4,
     slidesToScroll: 1,
     responsive: [
       {
@@ -90,7 +91,7 @@ function ListaProdutosHome() {
       </label>
 
       {produto.length === 0 && (
-        <Dna
+        <DNA
           visible={true}
           height="200"
           width="200"
@@ -102,7 +103,7 @@ function ListaProdutosHome() {
       <div className='container mx-auto my-4'>
         <Slider {...settings}>
           {filtredList.map((produto) => (
-            <div key={produto.id} className='px-2'>
+            <div key={produto.id} className=''>
               <CardProdutoHome produto={produto} />
             </div>
           ))}

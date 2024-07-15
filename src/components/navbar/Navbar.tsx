@@ -9,14 +9,19 @@ import {
   UserCirclePlus,
   CaretDown,
   User,
+  Basket
 } from "@phosphor-icons/react";
 import { toastAlerta } from "../../util/toastAlerta";
 import "./Navbar.css";
+import { CarrinhoContext } from "../../context/CarrinhoContext";
+
+
 
 function Navbar() {
   let navigate = useNavigate();
   const { usuario, handleLogout } = useContext(AuthContext);
   const [showSubMenu, setShowSubMenu] = useState(false);
+  const { listaCarrinho } = useContext(CarrinhoContext);
 
   function logout() {
     handleLogout();
@@ -25,6 +30,13 @@ function Navbar() {
   }
 
   const usuariofoto = usuario.foto;
+
+  const calcularQntItens = (itens) => {
+    return itens.reduce((acc, item) => acc + item.qtd, 0);
+  };
+
+  const somaQnt = calcularQntItens(listaCarrinho);
+
   return (
     <div className="w-full bg-[#292828] text-white rounded-pill">
       <div className="container mx-auto">
@@ -44,6 +56,7 @@ function Navbar() {
             <Link to="/produtos" className="flex items-center">
               Produto
             </Link>
+            
 
             <div
               className="nav-item relative"
@@ -120,7 +133,12 @@ function Navbar() {
                 </>
               )}
             </div>
-          </div>
+            <Link to="/carrinho" className="flex items-center">
+              <Basket size={32} />
+            </Link>
+            {/* numero do lado da cesta do carrinho la pra gabi mexer, boa sorte!! */}
+            {somaQnt > 0 && (<h1 className="bg-red-500 min-w-5 max-h-5 flex items-center justify-center rounded-full">{somaQnt}</h1>)}
+          </div>   
         </div>
       </div>
     </div>

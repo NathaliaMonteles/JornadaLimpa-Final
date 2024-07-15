@@ -1,4 +1,6 @@
 import { createContext, ReactNode, useState } from "react";
+import Produto from "../model/Produto";
+import { useNavigate } from "react-router-dom";
 
 interface CarrinhoContextProps {
     listaCarrinho: Array<Produto>;
@@ -56,6 +58,7 @@ export function CarrinhoProvider({ children }: CarrinhoProviderProps) {
     }
 
     function finalizarCompra() {
+        
         setListaCarrinho([]);
     }
 

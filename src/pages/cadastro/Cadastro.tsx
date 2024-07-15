@@ -76,7 +76,7 @@ function Cadastro() {
     flexDirection: 'column',
     alignItems: 'center',
     margin: 'auto', 
-    marginTop: '150px' 
+    marginTop: '50px' 
   };
 
   const estiloTitulo = {
