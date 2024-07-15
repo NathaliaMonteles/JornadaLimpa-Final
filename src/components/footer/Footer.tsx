@@ -34,11 +34,21 @@ function Footer() {
           <div className="justify-center container flex flex-col items-center pt-2.5">
             <h2 className='text-sm font-bold mb-4'>MEIOS DE PAGAMENTO</h2>
             <div className="flex justify-center gap-4">
+            <a href='https://ibb.co/Nx3qrmL'>
               <img src={bradesco} alt="" className='img1' width={38} height={20}/>
+              </a>
+              <a href='https://ibb.co/tPPQrQr'>
               <img src={elo} alt="" className='img1' width={38} height={20}/>
+              </a>
+              <a href='https://ibb.co/Ms3JrNp'>
               <img src={visa} alt="" className='img1' width={38} height={20}/>
+              </a>
+              <a href='https://ibb.co/pX7npdm'>
               <img src={mastercard}alt="" className='img1' width={38} height={20}/>
+              </a>
+              <a href='https://ibb.co/WzhrsWv'>
               <img src={pix} alt="" className='img1' width={38} height={20}/>
+              </a>
             </div>
             <div className="flex column flex-col justify-center items-center py-4">
             <p className='font-sans text-sm'>Acesse nossas redes sociais</p>

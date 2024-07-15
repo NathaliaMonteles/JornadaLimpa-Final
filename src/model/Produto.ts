@@ -9,4 +9,6 @@ export default interface Produto {
   cor: string;
   foto: string;
   categoria: Categoria | null;
+  qtd?: number
 }
+

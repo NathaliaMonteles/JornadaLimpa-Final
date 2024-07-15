@@ -18,7 +18,7 @@ function CardProdutoHome({ produto }: CardProdutoProps) {
 
 	return (
 
-		<div className='border-slate-900 flex flex-col rounded overflow-hidden justify-between min-h-[550px]'>
+		<div className='flex flex-col rounded overflow-hidden justify-between min-h-[550px]'>
 
 			<div className='relative'>
 				{mostrarOpcoes && (
@@ -47,8 +47,9 @@ function CardProdutoHome({ produto }: CardProdutoProps) {
 
 			<div>
 				<div className='p-4 '>
-					<img src={produto.foto} alt="foto do produto" className='max-h-[800px]' />
-					<h4 className='text-lg font-semibold uppercase mb-3'>{produto.produto}, {produto.cor}</h4>
+					<img src={produto.foto} alt="foto do produto" className='max-h-[800px]'/>
+					<h4 className='text-lg font-semibold uppercase mb-3'>{produto.produto}</h4>
+					<p>COR: {produto.cor}</p>
 					<p>TAMANHO - {produto.tamanho}</p>
 					<p>POR APENAS R${produto.preco}</p>
 				</div>

@@ -78,7 +78,7 @@ function ListaProdutosHome() {
 
   return (
     <>
-      <label className="flex justify-center mb-4 ">
+      <label className="flex">
         <input onChange={(event: ChangeEvent<HTMLInputElement>) => {
           setFiltro(event.target.value)
         }} 

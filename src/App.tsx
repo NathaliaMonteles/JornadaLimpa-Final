@@ -7,6 +7,9 @@ import Sobre from './pages/sobre/Sobre';
 import Login from './pages/login/Login';
 import Cadastro from './pages/cadastro/Cadastro';
 import { AuthProvider } from './context/AuthContext';
+import { CarrinhoProvider } from './context/CarrinhoContext';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import Entrega from './pages/entrega/Entrega';
 import FormularioCategoria from './components/categoria/formularioCategoria/FormularioCategoria';
 import ListaCategoria from './components/categoria/listaCategoria/ListaCategoria';
@@ -22,7 +25,9 @@ function App() {
   return (
     <>
       <AuthProvider>
+        <CarrinhoProvider>
         <BrowserRouter>
+        <ToastContainer/>
           <Navbar />
           <div className='min-h-[80vh]'>
             <Routes>
@@ -45,6 +50,7 @@ function App() {
           </div>
           <Footer />
         </BrowserRouter>
+        </CarrinhoProvider>
       </AuthProvider>
     </>
   );

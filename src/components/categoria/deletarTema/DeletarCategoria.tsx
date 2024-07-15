@@ -55,7 +55,7 @@ function DeletarCategoria() {
                 }
             })
 
-            toastAlerta ('categoria apagada com sucesso')
+            toastAlerta ('categoria apagada com sucesso', 'sucesso')
 
         } catch (error) {
             toastAlerta ('Erro ao apagar a categoria')
