@@ -4,8 +4,9 @@ import { AuthContext } from '../../../context/AuthContext';
 import Produto from '../../../model/Produto';
 import { buscar } from '../../../service/Service';
 import CardProduto from '../cardProduto/CardProduto';
-import  { DNA }  from 'react-loader-spinner';
-import {toastAlerta} from '../../../util/toastAlerta'
+import { DNA } from 'react-loader-spinner';
+import { toastAlerta } from '../../../util/toastAlerta';
+
 function ListaProdutos() {
   const [produtos, setProdutos] = useState<Produto[]>([]);
   const [produtosFiltrados, setProdutosFiltrados] = useState<Produto[]>([]);
@@ -16,12 +17,13 @@ function ListaProdutos() {
   const [filtroTamanho, setFiltroTamanho] = useState('');
 
   let navigate = useNavigate();
+
   const { usuario, handleLogout } = useContext(AuthContext);
   const token = usuario.token;
 
   useEffect(() => {
     if (token === '') {
-      toastAlerta('Você precisa estar logado','erro');
+      toastAlerta('Você precisa estar logado', 'erro');
       navigate('/');
     } else {
       buscarProdutos();
@@ -37,31 +39,27 @@ function ListaProdutos() {
       });
     } catch (error: any) {
       if (error.toString().includes('403')) {
-        toastAlerta('O token expirou, favor logar novamente','info');
+        toastAlerta('O token expirou, favor logar novamente', 'info');
         handleLogout();
       }
     }
   }
 
   useEffect(() => {
-    setProdutosFiltrados(produtos); // Inicialmente exibimos todos os produtos
+    setProdutosFiltrados(produtos);
   }, [produtos]);
 
   const filtrarProdutos = () => {
     let produtosFiltradosTemp = produtos.filter((produto) => {
-      // Filtrar por nome
       if (filtroNome && !produto.produto.toLowerCase().includes(filtroNome.toLowerCase())) {
         return false;
       }
-      // Filtrar por preço mínimo
       if (filtroPrecoMin !== '' && produto.preco < parseFloat(filtroPrecoMin.toString())) {
         return false;
       }
-      // Filtrar por preço máximo
       if (filtroPrecoMax !== '' && produto.preco > parseFloat(filtroPrecoMax.toString())) {
         return false;
       }
-      // Filtrar por tamanho
       if (filtroTamanho && produto.tamanho !== filtroTamanho) {
         return false;
       }
@@ -71,11 +69,19 @@ function ListaProdutos() {
     setProdutosFiltrados(produtosFiltradosTemp);
   };
 
+  const limparFiltros = () => {
+    setFiltroNome('');
+    setFiltroPrecoMin('');
+    setFiltroPrecoMax('');
+    setFiltroTamanho('');
+    setProdutosFiltrados(produtos);
+  };
+
   return (
     <>
       <div className='container mx-auto my-4'>
         <div className='flex items-center justify-between mb-4'>
-          <h2 className='text-xl font-title text-gray-800 font-bold'>LISTA DE PRODUTOS</h2>
+          <h2 className='text-xl font-title text-black font-bold'>LISTA DE PRODUTOS</h2>
           <div className='flex gap-4'>
             <input
               type='text'
@@ -105,22 +111,25 @@ function ListaProdutos() {
               onChange={(e) => setFiltroTamanho(e.target.value)}
               className='border p-2 rounded'
             />
-            <button className='bg-cyan-700 text-white px-4 py-2 rounded' onClick={filtrarProdutos}>
+            <button className='bg-cyan-600 text-white px-4 py-2 rounded' onClick={filtrarProdutos}>
               Filtrar
+            </button>
+            <button className='bg-cyan-600 text-white px-4 py-2 rounded' onClick={limparFiltros}>
+              Limpar Filtro
             </button>
           </div>
         </div>
 
         {produtos.length === 0 && (
-            <DNA
+          <DNA
             visible={true}
-            height="200"
-            width="200"
-            ariaLabel="dna-loading"
+            height='200'
+            width='200'
+            ariaLabel='dna-loading'
             wrapperStyle={{}}
-            wrapperClass="dna-wrapper mx-auto"
-            />
-            )}
+            wrapperClass='dna-wrapper mx-auto'
+          />
+        )}
 
         <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4'>
           {produtosFiltrados.map((produto) => (

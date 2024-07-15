@@ -1,7 +1,8 @@
 import { Link } from 'react-router-dom'
 import Produto from '../../../model/Produto'
 import { Trash, Pencil,ShoppingCartSimple } from '@phosphor-icons/react';
-import { useState } from 'react';
+import { useContext, useState } from 'react';
+import { CarrinhoContext } from '../../../context/CarrinhoContext';
 
 interface CardProdutoProps {
 	produto: Produto
