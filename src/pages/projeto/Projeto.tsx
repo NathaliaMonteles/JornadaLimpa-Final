@@ -1,4 +1,3 @@
-import React from "react";
 import { Lightning, Users, Leaf } from "@phosphor-icons/react";
 import "./Sobre.css";
 import urso from '../../assets/Sage_green_bear_desktop_wallpaper_3_-removebg-preview.png';
