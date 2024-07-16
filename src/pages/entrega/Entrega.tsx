@@ -5,7 +5,7 @@ function Entrega() {
 
   return (
     <>
-      <div className="justificando">
+      <div className="ml-20 mt-10">
         <div className="h-screen">
           <div className="pl-1 text-2xl mb-4 font-title">
             <h2>POLITÍCA DE ENTREGA:</h2>

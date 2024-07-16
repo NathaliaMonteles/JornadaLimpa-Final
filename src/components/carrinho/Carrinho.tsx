@@ -29,7 +29,7 @@ function Carrinho() {
   let navigate = useNavigate();
   useEffect(() => {
     if (token === '') {
-      toastAlerta('Loga ai pivete');
+      toastAlerta('Você precisa estar logado');
       navigate('/login');
     }
   }, [token]);
@@ -41,7 +41,7 @@ function Carrinho() {
           {listaCarrinho.map((item) => (
             <div
               key={item.id}
-              className="flex gap-5 items-center bg-white m-5 p-3"
+              className="flex gap-7 items-center bg-white m-5 p-3 border"
             >
               <img src={item.foto} alt="" className="max-h-20" />
               <div>
@@ -50,42 +50,44 @@ function Carrinho() {
                   cor: {item.cor}, tamanho: {item.tamanho}
                 </h2>
                 <button
-                  className="bg-red-500 rounded-lg text-white flex items-center"
+                  className="mt-3 px-3 gap-1 p-1 bg-red-500 rounded-lg text-white flex items-center"
                   onClick={() => removerItem(item)}
                 >
                   Remover
                 </button>
               </div>
-              <div className="bg-indigo-100 flex gap-3 items-center max-h-10 border border-black rounded-lg">
+              <div className="bg-white flex gap-2 max-h-10 px-2 border items-center border-black rounded-lg">
                 <button
-                  className="bg-white rounded-lg flex items-center px-4 gap-1"
+                  className="bg-white rounded-lg px-4 gap-1"
                   onClick={() => diminuirQuantidade(item)}
                 >
                   -
                 </button>
                 <h1>{item.qtd}</h1>
                 <button
-                  className="bg-white rounded-lg flex items-center px-4 gap-1"
+                  className="bg-white rounded-lg px-4 gap-1"
                   onClick={() => adicionarItem(item)}
                 >
                   +
                 </button>
               </div>
-              <h1>R$ {item.preco * item.qtd}</h1>
+              <div className="flex">
+                <h1>R$ {item.preco * item.qtd}</h1>
+              </div>
             </div>
           ))}
         </div>
 
-        <div className="bg-white max-h-40 max-w-[80%] m-5 p-3 border gap-10">
+        <div className="bg-white max-h-[200px] max-w-[80%] m-5 p-3 border gap-10">
             <div className="flex border-b-2">
-                <h1 >Resumo da compra</h1>
+                <h1 className="text-xl uppercase">resumo da compra</h1>
             </div>
           
 
-          <div className="flex gap-40 my-3">
+          <div className="flex gap-4 my-3">
             {somaQnt > 1 && <h2>Produtos ({somaQnt})</h2>}
             {somaQnt === 1 && <h2>Produto</h2>}
-            <h2>Total: R$ {somaTotal}</h2>
+            <h2 className="font-semibold">Total: R$ {somaTotal}</h2>
           </div>
           <div className="flex my-3">
             <h2>Frete:</h2>
@@ -93,7 +95,7 @@ function Carrinho() {
           </div>
 
           <button
-            className="rounded-lg flex items-center px-4 gap-1 bg-green-600"
+            className="rounded-md flex items-center text-white px-4 gap-1 p-2 bg-green-600 hover:bg-green-700"
             onClick={() => finalizarCompra() }
           >
 

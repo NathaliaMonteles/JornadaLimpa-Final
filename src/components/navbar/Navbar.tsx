@@ -137,7 +137,7 @@ function Navbar() {
               <Basket size={32} />
             </Link>
             {/* numero do lado da cesta do carrinho la pra gabi mexer, boa sorte!! */}
-            {somaQnt > 0 && (<h1 className="bg-red-500 min-w-5 max-h-5 flex items-center justify-center rounded-full">{somaQnt}</h1>)}
+            {somaQnt > 0 && (<h1 className="absolute top-2 -right-3 bg-red-500 min-w-5 max-h-5 flex items-center justify-center rounded-full">{somaQnt}</h1>)}
           </div>   
         </div>
       </div>

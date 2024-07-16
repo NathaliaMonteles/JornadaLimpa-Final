@@ -9,6 +9,11 @@
   background-color: var(--color-background);
  }
 
+.body-contato{
+  background-image: url(../../assets/contatoteste.png);
+  background-size: 100px;
+}
+
 
 .contact-form-container {
     display: flex;

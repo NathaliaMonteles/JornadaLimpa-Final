@@ -18,7 +18,7 @@ function CardProdutoHome({ produto }: CardProdutoProps) {
 			
 				<div className='produto-info'>
 					<img src={produto.foto} alt="foto do produto"/>
-					<h4 className='text-lg font-semibold uppercase mb-3'>{produto.produto}</h4>
+					<h4 className='text-lg font-semibold uppercase mb-1'>{produto.produto}</h4>
 					<p>COR: {produto.cor}</p>
 					<p>TAMANHO - {produto.tamanho}</p>
 					<p className='preco'>POR APENAS R${produto.preco}</p>

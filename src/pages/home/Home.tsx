@@ -1,25 +1,20 @@
 import React from "react";
 import { useState, useEffect, useRef } from "react";
 import "./Home.css";
-import {
-  ShoppingCart,
-  ArrowFatLeft,
-  ArrowFatRight,
-  CreditCard,
-  Lock,
-  Package,
-} from "@phosphor-icons/react";
-import Img1 from "../../assets/camisa1.png";
-import Img2 from "../../assets/rename2.png";
+import {ShoppingCart,ArrowFatLeft,ArrowFatRight,CreditCard,Lock,Package,} from "@phosphor-icons/react";
 import ImgMain from "../../assets/final3203902938290289.png";
-import Img3 from "../../assets/xicara1.png";
-import Img4 from "../../assets/xicara2.png";
+import Img1 from "../../assets/camisafinal.png";
+import Img2 from "../../assets/moleton.png";
+import Img3 from "../../assets/chicara.png";
+import Img4 from "../../assets/gorro.png";
+import Img5 from "../../assets/bone.png";
+import Img6 from "../../assets/mousepad.png"
 import { motion } from "framer-motion";
 import ModalProduto from "../../components/produto/modalProduto/ModalProduto";
 import ListaProdutosHome from "../../components/produto/listaProdutoHome/ListaProdutosHome";
 import { Link } from "react-router-dom";
 
-const images = [Img1, Img2, Img3, Img4, Img1, Img2, Img3, Img4];
+const images = [Img1, Img2, Img3, Img4, Img5, Img6];
 
 function Home() {
   const carrousel = useRef();
