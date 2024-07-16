@@ -20,6 +20,7 @@ import FormularioProduto from './components/produto/formularioProduto/Formulario
 import DeletarProduto from './components/produto/deletarProduto/DeletarProduto';
 import Perfil from './pages/perfil/Perfil';
 import Carrinho from './components/carrinho/Carrinho';
+import Meta from './pages/meta/Meta';
 
 
 function App() {
@@ -48,6 +49,7 @@ function App() {
               <Route path="/deletarProduto/:id" element={<DeletarProduto />} />
               <Route path="/perfil" element={<Perfil />} />
               <Route path="/carrinho" element={<Carrinho />} />
+              <Route path="/meta" element={<Meta />} />
             </Routes>
           </div>
           <Footer />

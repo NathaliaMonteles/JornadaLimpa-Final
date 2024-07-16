@@ -8,9 +8,9 @@ import {
   HouseLine,
   UserCirclePlus,
   CaretDown,
-  User,
-  Basket
+  User
 } from "@phosphor-icons/react";
+import { BsCart4 } from "react-icons/bs";
 import { toastAlerta } from "../../util/toastAlerta";
 import "./Navbar.css";
 import { CarrinhoContext } from "../../context/CarrinhoContext";
@@ -134,7 +134,7 @@ function Navbar() {
               )}
             </div>
             <Link to="/carrinho" className="flex items-center">
-              <Basket size={32} />
+              <BsCart4  size={32} />
             </Link>
             {/* numero do lado da cesta do carrinho la pra gabi mexer, boa sorte!! */}
             {somaQnt > 0 && (<h1 className="absolute top-2 -right-3 bg-red-500 min-w-5 max-h-5 flex items-center justify-center rounded-full">{somaQnt}</h1>)}

@@ -1,9 +1,10 @@
 import { GithubLogo, LinkedinLogo, Mailbox, LinktreeLogo } from '@phosphor-icons/react'
-import bradesco from "../../assets/bradesco@2x.png"
-import elo from "../../assets/elo@2x.png"
-import visa from "../../assets/visa@2x.png"
-import mastercard from "../../assets/mastercard@2x.png"
-import pix from "../../assets/pix@2x.png"
+import bradesco from "./../../assets/bradesco@2x.png";
+import visa from "./../../assets/visa@2x.png";
+import elo from "./../../assets/elo@2x.png";
+import mastercard from "./../../assets/mastercard@2x.png";
+import pix from "./../../assets/pix@2x.png";
+
 
 
 function Footer() {
@@ -27,29 +28,23 @@ function Footer() {
             <a href="/Contato">Contato</a>
             </p>
             <p className='text-sm'>
-            <a href="/Entrega">Perguntas Frequentes</a>
+            <a href="/Entrega">Dúvidas Frequentes</a>
             </p>
-          </div>
+            <p className='text-sm'>
+            <a href="/Meta">Meta</a>
+            </p>
+            </div>
 
           <div className="justify-center container flex flex-col items-center pt-2.5">
             <h2 className='text-sm font-bold mb-4'>MEIOS DE PAGAMENTO</h2>
             <div className="flex justify-center gap-4">
-            <a href='https://ibb.co/Nx3qrmL'>
               <img src={bradesco} alt="" className='img1' width={38} height={20}/>
-              </a>
-              <a href='https://ibb.co/tPPQrQr'>
               <img src={elo} alt="" className='img1' width={38} height={20}/>
-              </a>
-              <a href='https://ibb.co/Ms3JrNp'>
               <img src={visa} alt="" className='img1' width={38} height={20}/>
-              </a>
-              <a href='https://ibb.co/pX7npdm'>
-              <img src={mastercard}alt="" className='img1' width={38} height={20}/>
-              </a>
-              <a href='https://ibb.co/WzhrsWv'>
+              <img src={mastercard} alt="" className='img1' width={38} height={20}/>
               <img src={pix} alt="" className='img1' width={38} height={20}/>
-              </a>
             </div>
+
             <div className="flex column flex-col justify-center items-center py-4">
             <p className='font-sans text-sm'>Acesse nossas redes sociais</p>
             <div className='flex gap-2'>
@@ -67,8 +62,8 @@ function Footer() {
                 </a>
                 <br/>
             </div>
-            
-          <div className="justify-center container flex flex-col items-center pt-4">
+
+          <div className="justify-center container flex flex-col items-center pt-8">
           <p className='font-title text-xs'>Um projeto realizado na Generation | Copyright©️: Jornada Limpa</p>
           </div>
 
@@ -82,9 +77,9 @@ function Footer() {
             <p className='font-sans text-sm'>(11)99999-9999</p>
           </div>
           </div>
-
       </>
-  )
+  );
 }
 
-export default Footer
+
+export default Footer;
